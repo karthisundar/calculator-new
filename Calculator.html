@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+  <title>BASIC CALCULATOR</title>
+  <link rel ="stylesheet"   href="cal.css">
+  <body>
+    
+      <div class = "container">
+        <div class = "calculator">
+        <input type = "text" placeholder="0" id = "output-screen">
+
+        <button onClick="Clear()">Cl</button>
+        <button onClick="del()">DEL</button>
+        <button onClick="display('%')">%</button>
+        <button onClick="display('/')">/</button>
+        <button onClick="display('7')">7</button>
+        <button onClick="display('8')">8</button>
+        <button onClick="display('9')">9</button>
+        <button onClick="display('4')">4</button>
+        <button onClick="display('5')">5</button>
+        <button onClick="display('6')">6</button>
+        <button onClick="display('1')">1</button>
+        <button onClick="display('2')">2</button>
+        <button onClick="display('3')">3</button>
+        <button onClick="display('+')">+</button>
+        <button onClick="display('-')">-</button>
+        <button onClick="display('0')">0</button>
+        <button onClick="calculate()"class="equal">=</button>
+
+      </div>
+
+        </div>
+<script>
+  
+  let outputScreen = document.getElementById("output-screen");
+
+function display(num){
+    outputScreen.value += num;
+}
+function calculate(){
+  try{
+    outputScreen.value = eval(outputScreen.value);
+  
+  }
+  catch(err)
+  {
+    alert("check")
+  }
+}
+function Clear(){
+  outputScreen.value = "";
+}
+function del(){
+  outputScreen.value = outputScreen.value.slice(0,-1);
+}
+</script>
+
+
+  </body>
+  </head>
+  </html>
+
+
+  
